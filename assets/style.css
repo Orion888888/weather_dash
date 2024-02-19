@@ -39,12 +39,16 @@ h1 {
     width: 100%;
     margin: 25px 0;
     background: #bbb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .weather-input .separator::before {
     content: "or";
     color: #6C757D;
     font-size: 1.18rem;
     padding: 0 15px;
+    margin-top: -4px;
     background: #e3f2fd;
 }
 .weather-input button {
@@ -78,4 +82,12 @@ h1 {
 }
 .weather-output {
     width: 100%;
+}
+.current-weather {
+    color: #fff;
+    display: flex;
+    border-radius: 20px;
+    padding: 20px 70px 20px 20px;
+    background: steelblue;
+    justify-content: space-between;
 }
