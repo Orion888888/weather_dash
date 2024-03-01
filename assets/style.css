@@ -21,7 +21,8 @@ h1 {
     gap: 35px;
     padding: 30px;
 }
-/*weather-input includes the <div> and buttons that are the child to the parent*/
+/*weather-input includes the <div> and buttons that are the
+child to the parent*/
 .weather-input {
     width: 550%;
 }
@@ -53,7 +54,8 @@ h1 {
     margin-top: -4px;
     background: #e3f2fd;
 }
-/*this code utilizes the signature button I developed and have implemented in all my projects*/
+/*this code utilizes the signature button I developed and 
+have implemented in all my projects*/
 .weather-input button {
     padding: 10px 0;
     /* margin: 0; */
@@ -83,7 +85,8 @@ h1 {
 .weather-input .location-btn {
     background: lightslategrey;
 }
-/*this starts to add styling to the data card that will display the fetched information.*/
+/*this starts to add styling to the data card that will 
+display the fetched information.*/
 .weather-output {
     width: 100%;
 }
@@ -102,6 +105,9 @@ h1 {
     margin-top: 12px;
     font-size: 1rem;
     font-weight: 500;
+}
+.current-weather .icon{
+    text-align: center;
 }
 .current-weather .icon img {
     max-width: 120px;
@@ -131,7 +137,8 @@ h1 {
     max-width: 70px;
     margin: 5px 0 -10px 0;
 }
-/*these are the media queries that will resize the application to fit multiple windows.*/
+/*these are the media queries that will resize 
+the application to fit multiple windows.*/
 @media(max-width: 1400px) {
     .weather-output .current-weather {
         padding:20px;
