@@ -1,5 +1,6 @@
 const cityInput = document.querySelector(".city-input");
 const searchBtn = document.querySelector(".search-btn");
+const currentWeatherDiv = document.querySelector(".current-weather");
 const weatherCardsDiv = document.querySelector(".weather-cards");
 
 const APIkey = "93df8836a72426fc58eb9d014789297b"; //openweathermap API key
@@ -28,10 +29,16 @@ const getWeatherDetails = (cityName, lat, lon) => {
       });  
 
     // this will clear previous weather data
+    cityInput.value = "";
+    weatherCardsDiv.innerHTML = "";
 
       console.log(fiveDaysForecast);
-      fiveDaysForecast.forEach(weatherItem => {
-        weatherCardsDiv.insertAdjacentHTML("beforeend", createWeatherCard(weatherItem));
+      fiveDaysForecast.forEach((weatherItem, index) => {
+        if (index === 0) {
+            weatherCardsDiv.insertAdjacentHTML("beforeend", createWeatherCard(weatherItem));
+        } else {
+            weatherCardsDiv.insertAdjacentHTML("beforeend", createWeatherCard(weatherItem));
+        }
       });
     }).catch(() => {
         alert("An error ocurred while fetching the weather forecast!");
