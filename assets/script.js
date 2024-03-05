@@ -6,6 +6,7 @@ const weatherCardsDiv = document.querySelector(".weather-cards");
 
 const APIkey = "93df8836a72426fc58eb9d014789297b"; //openweathermap API key
 
+
 const createWeatherCard = (cityName, weatherItem, index) => {
     //HTML for the main weather card
     if(index === 0) {
@@ -70,6 +71,18 @@ const getWeatherDetails = (cityName, lat, lon) => {
 const getCityCoordinates = () => {
     const cityName = cityInput.value.trim();
     if (!cityName) return;
+
+        // Save to local storage
+        let cities = JSON.parse(localStorage.getItem('searchedCities')) || [];
+        if (!cities.includes(cityName)) {
+            if (cities.length >= 10) { // Limit to 10 cities
+                cities.shift(); // Remove the oldest city
+            }
+            cities.push(cityName);
+            localStorage.setItem('searchedCities', JSON.stringify(cities));
+            displaySearchedCities();
+        }
+
     const GEOCODING_API_URL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${APIkey}&units=imperial`
    
     // get city coordinates (latitude, longitude, and name) from API response
@@ -104,7 +117,28 @@ const getUserCoordinates = () => {
         }
     );
 }
-    
+
+const displaySearchedCities = () => {
+    const container = document.querySelector('.search-history-container');
+    container.innerHTML = ''; // Clear existing buttons
+    const cities = JSON.parse(localStorage.getItem('searchedCities')) || [];
+
+    cities.forEach(city => {
+        const button = document.createElement('button');
+        button.textContent = city;
+        button.classList.add('city-button'); // Add any required CSS classes
+        button.addEventListener('click', () => {
+            cityInput.value = city; // Set the input value to the city name
+            getCityCoordinates(); // Fetch weather details for this city
+        });
+        container.appendChild(button);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    displaySearchedCities();
+});
+
 locationBtn.addEventListener("click", getUserCoordinates);
 searchBtn.addEventListener("click", getCityCoordinates);
 cityInput.addEventListener("keyup", e => e.key === "Enter" && getCityCoordinates());

@@ -5,7 +5,7 @@
         <title>Weather Dash</title>
         <link rel="stylesheet" href="./assets/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="./assets/script.js" defer></script>
+        
     </head>
     <body>
 <!--This section provides the search bar and buttons to fetch data-->
@@ -17,7 +17,12 @@
                 <button class="search-btn">Search</button>
                 <div class="separator"></div>
                 <button class="location-btn">Current Location</button>
+ <!-- Search history -->
+            <div id="search-history-container" class="row m-0 search-history-container"></div>
+
             </div>
+           
+      
 <!--This section provides the spaces for the data to be displayed-->
             <div class="weather-output">
                 <div class="current-weather">
@@ -69,5 +74,6 @@
                 </div>
             </div>
         </div>
+        <script src="./assets/script.js" defer></script>
     </body>
 </html>

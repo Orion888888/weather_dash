@@ -21,6 +21,9 @@ h1 {
     gap: 35px;
     padding: 30px;
 }
+.search-history-container {
+    padding: 10px;
+}
 /*weather-input includes the <div> and buttons that are the
 child to the parent*/
 .weather-input {
