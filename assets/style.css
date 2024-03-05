@@ -61,23 +61,14 @@ child to the parent*/
 have implemented in all my projects*/
 .weather-input button {
     padding: 10px 0;
-    /* margin: 0; */
     width: 100px;
-    /* height: 60px; */
     text-align: center;
-    /* top: 240px;
-    left: 260px; */
-    /* position: left; */
     outline: none;
     border: none;
     border-radius: 30px;
     transition-duration: 3s;
-    /* box-shadow: 0 10px 30px rgba(0, 0, 0, .5); */
     background-color: rgb(155, 100, 155);
-    /* font-weight: bold;
-    font-family: 'Courier New', Courier, monospace; */
     font-size: larger;
-    /* font-weight: lighter; */
 }
 .weather-input button:hover{
     cursor:pointer;

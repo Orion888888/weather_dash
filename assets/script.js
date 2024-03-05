@@ -18,7 +18,7 @@ const createWeatherCard = (cityName, weatherItem, index) => {
         <h4 class="wind">Wind: ${weatherItem.wind.speed}M/S</h4>
     </div>
     <div calss="icon">
-    <img src="http://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@4x.png" alt="weather-icon">
+    <img src="https://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@4x.png" alt="weather-icon">
     <h4>${weatherItem.weather[0].description}</h4>
     </div>`;
     
@@ -26,7 +26,7 @@ const createWeatherCard = (cityName, weatherItem, index) => {
     } else {
           return `<li class="card">
                 <h3 class="date">(${weatherItem.dt_txt.split(" ")[0]})</h3>
-                <img src="http://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@2x.png" alt="weather-icon">
+                <img src="https://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@2x.png" alt="weather-icon">
                 <h4 class="temp">Temp: ${(weatherItem.main.temp).toFixed(2)}°F</h4>
                 <h4 class="humidity">Humidity: ${weatherItem.main.humidity}%</h4>
                 <h4 class="wind">Wind: ${weatherItem.wind.speed}M/S</h4>
@@ -35,7 +35,7 @@ const createWeatherCard = (cityName, weatherItem, index) => {
 }
 
 const getWeatherDetails = (cityName, lat, lon) => {
-    const weatherAPIurl = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIkey}&units=imperial`;
+    const weatherAPIurl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIkey}&units=imperial`;
     
     fetch(weatherAPIurl).then(res => res.json()).then(data => {
         //filters the forecast to get only one forecast per day.
@@ -83,7 +83,7 @@ const getCityCoordinates = () => {
             displaySearchedCities();
         }
 
-    const GEOCODING_API_URL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${APIkey}&units=imperial`
+    const GEOCODING_API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${APIkey}&units=imperial`
    
     // get city coordinates (latitude, longitude, and name) from API response
     fetch(GEOCODING_API_URL).then(res => res.json()).then(data => {
@@ -99,7 +99,7 @@ const getUserCoordinates = () => {
     navigator.geolocation.getCurrentPosition(
         position => {
             const { latitude, longitude } = position.coords;
-            const REVERSE_GEOLOCATION_URL = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${APIkey}&units=imperial`;
+            const REVERSE_GEOLOCATION_URL = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${APIkey}&units=imperial`;
             
             // city name from coordinates using reverse geocoding API
             fetch(REVERSE_GEOLOCATION_URL).then(res => res.json()).then(data => {
