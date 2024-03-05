@@ -30,4 +30,8 @@ You can type any city / location in the world in the search bar and it will prov
 
 - The user will then recieve information within the different cards to show Next-Day and a 5-Day forecast.
 
+- The user will then see cities stored into the local storage with a limit of 10 stored items that also keep the same styling for the buttons I developed.
+
+- User is able to click on the stored items as buttons to get quick access to weather data.
+
 ![image](/assets/weather_dashboard_pic.png) 
