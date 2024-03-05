@@ -12,7 +12,7 @@ You can type any city / location in the world in the search bar and it will prov
 
 - [Deployed - Site](https://orion888888.github.io/recommenDater_app/)
 
-- [Github - Repo](https://github.com/Orion888888/recommenDater_app)
+- [Github - Repo](https://github.com/Orion888888/weather_dash.git)
 
 ## 🙇Contributors
 [Orion888888](https://github.com/Orion888888)
