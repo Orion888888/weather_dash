@@ -10,7 +10,7 @@ You can type any city / location in the world in the search bar and it will prov
 
 - [OpenWeather - API](https://openweathermap.org/): for fetching the weather information provided.
 
-- [Deployed - Site](https://orion888888.github.io/recommenDater_app/)
+- [Deployed - Site](https://orion888888.github.io/weather_dash/)
 
 - [Github - Repo](https://github.com/Orion888888/weather_dash.git)
 
